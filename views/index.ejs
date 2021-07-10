@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header text-center bg-secondary text-white">
+                <h6 class="pt-1">Agregar Nuevo Registro  </h6>
+            </div>
+            <div class="card-body bg-light">
+                <form action="/addDul" method="POST">
+                    <div class="form-group">
+                        <label class="pr-2">Nombre</label>
+                        <input type="text" name="nombre" placeholder="Ingresa el nombre... " class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="pr-2">Precio</label>
+                        <input type="number" name="precio" placeholder="Ingresa el precio... " class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="pr-2">Existencia</label>
+                        <input type="number" name="existencia" placeholder="Ingresa el numero de existencias... " class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="pr-2">Descripcion</label>
+                        <textarea name="descripcion"  placeholder="Ingresa tu Descripcion..." class="form-control" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-info btn-block mt-4">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="col-12 pt-4 mt-4 mb-4 pb-4">
+            <table class="table table-bordered table-hover bg-white">
+                <div class="card">
+                    <div class="card-header text-center bg-secondary">
+                        <h6 class="pt-2 text-white">ANIMALES</h6>
+                    </div>
+                    <thead class="card-header text-center">
+                        <tr>
+                           
+                            <th>nombre</th>
+                            <th>precio</th>
+                            <th>existencia</th>
+                            <th>descripcion</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <% for(var i=0; i < tasksAn.length; i++) { i+1 %>
+                            <tr>
+                                <td><%= tasksAn[i].nombre %></td>
+                                <td><%= tasksAn[i].precio %></td>
+                                <td><%= tasksAn[i].existencia %></td>
+                                <td><%= tasksAn[i].descripcion %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </div>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
